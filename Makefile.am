@@ -23,15 +23,9 @@ ACLOCAL_AMFLAGS = -I m4
 # VERSION = @VERSION@@GITVERSION@ # for development version
 VERSION = @VERSION@
 
-SUBDIRS = src tests doc tools
+SUBDIRS = src
 
 EXTRA_HEADERS = src/mpc-log.h
 include_HEADERS = src/mpc.h @MPC_LOG_H@
-EXTRA_DIST = doc/fdl-1.3.texi src/mpc-log.h Makefile.vc
-
-bench :
-	cd tools/bench && $(MAKE) $(AM_MAKEFLAGS) bench
-
-mpcheck :
-	cd tools/mpcheck && $(MAKE) $(AM_MAKEFLAGS) mpcheck
+EXTRA_DIST = src/mpc-log.h Makefile.vc
 
